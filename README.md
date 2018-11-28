@@ -24,7 +24,7 @@ Create a new project with the following screenshots as a guide
         <td>
             <img alt="step 3" src="docs/screenshots/03.png">
         </td>
-<td><img alt="step 4" src="src/docs/screenshots/04.png"></td>
+<td><img alt="step 4" src="docs/screenshots/04.png"></td>
     </tr>
 <tr>
         <td>
