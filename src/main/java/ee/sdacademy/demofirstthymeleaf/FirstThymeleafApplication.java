@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemofirstThymeleafApplication {
+public class FirstThymeleafApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemofirstThymeleafApplication.class, args);
+        SpringApplication.run(FirstThymeleafApplication.class, args);
     }
 }

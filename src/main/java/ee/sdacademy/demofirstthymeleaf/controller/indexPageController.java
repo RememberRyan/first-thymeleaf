@@ -1,6 +1,8 @@
 package ee.sdacademy.demofirstthymeleaf.controller;
 
+import ee.sdacademy.demofirstthymeleaf.model.Person;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -12,7 +14,14 @@ public class indexPageController {
 
 
     @RequestMapping("/")
-    public String mainPage() {
+    // Model: used as argument to apply every attribute to 'index'
+    public String mainPage(Model model) {
+        model.addAttribute("greeting","Hi Ryan, how's it going?");
+
+        // used the object I created, 'Person.java'
+        model.addAttribute("person", new Person("Ryan", "Alexander", 70));
+
+
         return "index";
     }
 }

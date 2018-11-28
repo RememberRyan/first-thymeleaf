@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>My first thymeleaf app</title>
 </head>
 <body>
-    <h1>Welcome to Thymeleaf</h1>
+    <!--'greeting' called from indexPageController, replaces original H1-->
+    <h1 th:text="${greeting}">Welcome to Thymeleaf</h1>
+
+<div>
+    <p><label>Name:</label> <span th:text="${person.name}">Name</span></p>
+    <p><label>Last name:</label> <span th:text="${person.lastname}">Last name</span></p>
+    <p><label>Age:</label> <span th:text="${person.age}">70</span></p>
+
+</div>
 </body>
 </html>
