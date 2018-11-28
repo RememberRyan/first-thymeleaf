@@ -28,7 +28,8 @@ public class indexPageController {
         persons.add(new Person ("Ryan", "Alexander", 70));
         persons.add(new Person ("Bob", "Geldof", 78));
         persons.add(new Person ("Anna", "Kournikova", 34));
-        persons.add(new Person ("Nessa", "DiAngella", 34));
+        persons.add(new Person ("Nessa", "DiAngella", 29));
+        persons.add(new Person ("Mickey", "Mouse", 13));
         model.addAttribute("students", persons);
 
         return "index";

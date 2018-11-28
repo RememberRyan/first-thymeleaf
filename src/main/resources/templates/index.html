@@ -30,12 +30,14 @@
 
 </div>
 
+<h2>Here's an example of conditional statements being used</h2>
 <table>
     <thead>
     <tr>
         <th>Name</th>
         <th>Last Name</th>
         <th>Age</th>
+        <th>Status</th>
     </tr>
     </thead>
     <tbody>
@@ -45,7 +47,17 @@
         <td th:text="${student.name}">Replaced name</td>
         <td th:text="${student.lastname}">Replaced lastname</td>
         <td th:text="${student.age}">Replaced age 99</td>
+        <td>
+            <!--&lt;!&ndash;// Beware: you'll need to escape certain symbols to make it write some texts&ndash;&gt;-->
+            <!--<span th:if="${student.age < 30}" th:text="Young"></span>-->
+            <!--&lt;!&ndash;// th:unless is like the 'else' for the above statement&ndash;&gt;-->
+            <!--<span th:unless="${student.age < 30}" th:text="Mature"></span>-->
 
+        <!--// alternative way-->
+            <span th:if="${student.age < 30}">&lt; 30 Young</span>
+            <!--// instead of greater than-->
+            <span th:unless="${student.age < 30}">&gt; 30 Mature</span>
+        </td>
     </tr>
     </tbody>
 </table>
