@@ -1,4 +1,4 @@
-# SpringBootBank
+# Thymeleaf introduction
 
 Introduction to Thymeleaf. <br>
 
