@@ -3,15 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>My first thymeleaf app</title>
+    <!--<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+    <style>
+        table, td, th {
+            border: 1px solid black;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+        th {
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
-    <!--'greeting' called from indexPageController, replaces original H1-->
-    <h1 th:text="${greeting}">Welcome to Thymeleaf</h1>
+<!--'greeting' called from indexPageController, replaces original H1-->
+<h1 th:text="${greeting}">Welcome to Thymeleaf</h1>
 
 <div>
     <p><label>Name:</label> <span th:text="${person.name}">Name</span></p>
     <p><label>Last name:</label> <span th:text="${person.lastname}">Last name</span></p>
     <p><label>Age:</label> <span th:text="${person.age}">70</span></p>
+
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--// for loop for each 'student' in the Array-->
+    <tr th:each="student: ${students}">
+        <!--// awful styling to be replaced later-->
+        <td th:text="${student.name}">Replaced name</td>
+        <td th:text="${student.lastname}">Replaced lastname</td>
+        <td th:text="${student.age}">Replaced age 99</td>
+
+    </tr>
+    </tbody>
+</table>
+
+
+<div>
+
 
 </div>
 </body>
