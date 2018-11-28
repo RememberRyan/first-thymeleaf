@@ -21,7 +21,7 @@
 </head>
 <body>
 <!--'greeting' called from indexPageController, replaces original H1-->
-<h1 th:text="${greeting}">Welcome to Thymeleaf</h1>
+<h1 th:text="${greeting}">Welcome to Thymeleaf Simple Application</h1>
 
 <div>
     <p><label>Name:</label> <span th:text="${person.name}">Name</span></p>
@@ -54,14 +54,14 @@
             <!--&lt;!&ndash;// th:unless is like the 'else' for the above statement&ndash;&gt;-->
             <!--<span th:unless="${student.age < 30}" th:text="Mature"></span>-->
 
-        <!--// alternative way-->
+            <!--// alternative way-->
             <span th:if="${student.age < 30}">&lt; 30 Young</span>
             <!--// instead of greater than-->
             <span th:unless="${student.age < 30}">&gt; 30 Mature</span>
         </td>
 
         <!--// case/switch example-->
-        <td th:switch ="${student.gender}">
+        <td th:switch="${student.gender}">
             <span th:case="0">Female</span>
             <span th:case="1">Male</span>
             <!--// wildcard-->
@@ -71,6 +71,26 @@
     </tbody>
 </table>
 
+<div>
+    <h2>This form demonstrates us using form submissions with input fields</h2>
+    <p>* newly added people are only added to memory. Data is lost after the application has restarted.</p>
+    <!--// Saving to the database using th:action-->
+    <form action="#" th:action="@{/saveStudent}" method="post" th:object="${newStudent}">
+        <div class="row">
+            <label>Name:</label> <input type="text" th:field="*{name}">
+        </div>
+        <div class="row"><label>Last name:</label> <input type="text" th:field="*{lastname}"></div>
+        <div class="row"><label>Age:</label> <input type="text" th:field="*{age}"></div>
+        <div class="row"><label>Gender:</label>
+            <select th:field="*{gender}">
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+                <option value="2">Other?</option>
+            </select>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+</div>
 
 <div>
 
