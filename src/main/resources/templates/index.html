@@ -38,6 +38,7 @@
         <th>Last Name</th>
         <th>Age</th>
         <th>Status</th>
+        <th>Gender</th>
     </tr>
     </thead>
     <tbody>
@@ -57,6 +58,14 @@
             <span th:if="${student.age < 30}">&lt; 30 Young</span>
             <!--// instead of greater than-->
             <span th:unless="${student.age < 30}">&gt; 30 Mature</span>
+        </td>
+
+        <!--// case/switch example-->
+        <td th:switch ="${student.gender}">
+            <span th:case="0">Female</span>
+            <span th:case="1">Male</span>
+            <!--// wildcard-->
+            <span th:case="*">Wildcard, who is this?</span>
         </td>
     </tr>
     </tbody>

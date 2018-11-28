@@ -22,14 +22,14 @@ public class indexPageController {
         model.addAttribute("greeting","Hi Ryan, how's it going?");
 
         // used the object I created, 'Person.java'
-        model.addAttribute("person", new Person("Ryan", "Alexander", 70));
+        model.addAttribute("person", new Person("Ryan", "Alexander",1, 70));
 
         List<Person> persons = new ArrayList<>();
-        persons.add(new Person ("Ryan", "Alexander", 70));
-        persons.add(new Person ("Bob", "Geldof", 78));
-        persons.add(new Person ("Anna", "Kournikova", 34));
-        persons.add(new Person ("Nessa", "DiAngella", 29));
-        persons.add(new Person ("Mickey", "Mouse", 13));
+        persons.add(new Person ("Ryan", "Alexander", 1, 200));
+        persons.add(new Person ("Bob", "Geldof", 1, 78));
+        persons.add(new Person ("Anna", "Kournikova",0, 34));
+        persons.add(new Person ("Nessa", "DiAngella",0, 29));
+        persons.add(new Person ("Mickey", "Mouse", 2,13));
         model.addAttribute("students", persons);
 
         return "index";

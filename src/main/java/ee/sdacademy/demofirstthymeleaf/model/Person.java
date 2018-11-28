@@ -13,5 +13,7 @@ public class Person {
 
     private String name;
     private String lastname;
+    // boolean not good for swtich cases
+    private int gender;
     private Integer age;
 }
